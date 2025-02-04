@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:smart_team/ImgCounterTitle.dart';
 import 'package:smart_team/about_us_and_out_value/OurValue.dart';
 import 'package:smart_team/app_bar/CustomAppBar.dart';
 import 'package:smart_team/main_slider/MainImgSlider.dart';
@@ -77,15 +78,54 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(
-                height: 40,
+                height: 20,
               ),
-              SizedBox(
-                width: double.infinity,
-                height: 200,
-                  child: Container(
-                color: Color(0xFF252525),
-                child: Center(child: Text("Hello", style: TextStyle(color: Colors.white))),
-              ))
+              Container(
+                  padding: EdgeInsets.all(44),
+                  width: double.infinity,
+                  color: Color(0xFF252525),
+                  child: Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: 120,
+                      // Horizontal space between items
+                      runSpacing: 60,
+                      // Vertical space between items
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ImgCounterTitle(
+                                imgPath: 'assets/img/fact1.png',
+                                target: 1267,
+                                title: 'TOTAL PROJECTS'),
+                            SizedBox(
+                              width: 120,
+                            ),
+                            ImgCounterTitle(
+                                imgPath: 'assets/img/fact2.png',
+                                target: 650,
+                                title: 'STAFF MEMBERS'),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ImgCounterTitle(
+                                imgPath: 'assets/img/fact3.png',
+                                target: 4000,
+                                title: 'HOURS OF WORK'),
+                            SizedBox(
+                              width: 120,
+                            ),
+                            ImgCounterTitle(
+                                imgPath: 'assets/img/fact4.png',
+                                target: 44,
+                                title: 'COUNTRIES EXPERIENCE'),
+                          ],
+                        )
+                      ])),
             ],
           ),
         ),
